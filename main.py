@@ -48,10 +48,10 @@ while True:
         gray_face = gray_image[y:y+h, x:x+w]
         #specify model face size here 48x48
         emotion = get_emotion(gray_face, 48, 48)
-        cv2.rectangle(flipped_rgb_image,(x,y),(x+w,y+h),(0, 255, 0),1)
+        cv2.rectangle(flipped_rgb_image,(x,y),(x+w,y+h),(0, 255, 0),2)
         cv2.putText(flipped_rgb_image, emotion, (30,30), font, 0.8, (0, 255, 0), 1)
     
-    cv2.imshow('rgb', flipped_rgb_image)
+    cv2.imshow('Live Emotion Recognition', flipped_rgb_image)
     
     k = cv2.waitKey(1) & 0xEFFFFF
     if k==27:   
