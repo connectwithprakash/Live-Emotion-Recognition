@@ -30,7 +30,8 @@ def get_emotion(image, shape_x, shape_y):
     image = cv2.resize(image,(shape_x, shape_y))
     image = image.reshape((1, shape_x, shape_y, 1))
     result = model.predict_classes(image, verbose=0)
-    emotions = {0: 'Angry', 1: 'Disgust', 2: 'Fear', 3: 'Happy', 4: 'Sad', 5: 'Surprise', 6: 'Neutral'}
+    emotions = {0: 'Neutral', 1: 'Happiness', 2: 'Surprise', 3: 'Sadness', 4: 'Anger', 5: 'Disgust', 6: 'Fear',
+               7: 'Contempt', 8: 'unknown', 9: 'Not a Face'}
     return emotions[result[0]]
 
 
